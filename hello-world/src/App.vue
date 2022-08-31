@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <p>Aplicação Aula</p>
+    <exibir-nome v-for="(cliente, chave) in rsClientes" :nome="cliente.nome"></exibir-nome>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
 
-@Component
-export default class App extends Vue { }
+import AppCls from './AppCls'
+export default AppCls
 
 </script>
 

@@ -1,0 +1,60 @@
+import { Component, Vue } from 'vue-property-decorator';
+
+interface CadastroColaboradorInterface {
+    nome: string
+    endereco: string
+}
+
+@Component
+export default class ColaboradorCls extends Vue {
+
+    constructor() {
+        super()
+    }
+
+    public rsColaborador: CadastroColaboradorInterface = {
+        nome: '',
+        endereco: ''
+    }
+
+    public msgErro = {
+        nome: '',
+        endereco: ''
+    }
+
+    public validarFormulario() {
+        if (!this.rsColaborador.nome || this.rsColaborador.nome.length < 10) {
+            this.msgErro.nome = 'Campo Nome é Obrigatório e deve ter ao menos 10 caracteres.'
+        } else {
+            this.msgErro.nome = ''
+        }
+
+        if (!this.rsColaborador.endereco || this.rsColaborador.endereco.length < 10) {
+            this.msgErro.endereco = 'Campo Endereço é Obrigatório e deve ter ao menos 10 caracteres.'
+        } else {
+            this.msgErro.endereco = ''
+        }
+
+        // window.alert('Estou dentro do Validar Formulario')
+
+    }
+
+    public checarCaracter(event: any) {
+
+        const eNumero: RegExp = new RegExp('[0-9]', 'g')
+
+        if (eNumero.test(event.key)) {
+            event.preventDefault()
+        }
+
+        // console.log('Dentro de Checar Caracter: ', event.key)
+
+    }
+
+    public limparCampo(event: any) {
+        this.rsColaborador.endereco = ""
+    }
+
+
+
+}

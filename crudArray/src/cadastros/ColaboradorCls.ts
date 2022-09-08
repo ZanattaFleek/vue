@@ -34,6 +34,14 @@ export default class ColaboradorCls extends Vue {
         }
     }
 
+    private excluir() {
+        console.log('Excluir')
+    }
+
+    private alterar() {
+        console.log('Alterar')
+    }
+
 
 
 }

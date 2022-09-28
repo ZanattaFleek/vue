@@ -4,7 +4,6 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    <p>Início do seção de Router View</p>
     <router-view />
   </div>
 </template>
